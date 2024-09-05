@@ -4,7 +4,7 @@ html,body{
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ddd;
+   background-color: rgb(89, 167, 215);
     line-height: 1.65;
     padding-bottom: 1000px;
 }
@@ -12,7 +12,24 @@ body{
     width: 800px;
     margin: 50px auto;
     background-color: #fff;
+    box-shadow: 10px 12px 4px rgb(49, 43, 139);
     padding: 20px;
-    box-sizing: border-box;
-    display: flex;
+    box-sizing: content-box;
+    display:flex;
+}
+.kolom-utama{
+    width: 70%;
+    padding: 20px;
+
+}
+.sidebar-satu{
+    order: -1;;
+    width: 30%;
+    padding: 20px;
+
+}
+.sidebar-dua{
+    width: 30%;
+    padding: 20px;
+
 }
