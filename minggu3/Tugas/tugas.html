@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tugas HTML</title>
+        <link rel="stylesheet" href="styleTugas.css">
+    </head>
+    <body>
+        <h1>Formulir Data Diri</h1>
+        <form>
+            <table class="table">
+                <tr>
+                    <td><label for="nama">Nama</label></td>
+                    <td><input type="text" id="nama" name="nama"></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><label for="alamat">Alamat</label></td>
+                    <td><textarea cols="30" rows="5" id="alamat" name="alamat"></textarea></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><label for="BirthDate">Tanggal lahir</label></td>
+                    <td><input type="date" id="date" name="date"></td>
+                </tr>
+                <tr></tr>
+
+                <tr>
+                    <td><label for="Jenis Kelamin">Jenis Kelamin</label></td>
+                    <td>
+                        <input type="radio" id="laki" name="gender" value="Laki-Laki">
+                        <label for="male">Laki-Laki</label><br>
+                        <input type="radio" id="cewe" name="gender" value="Wanita">
+                        <label for="female">Wanita</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="hobby">Hobby</label></td>
+                    <td>
+                        <input type="checkbox"  name="hobby1" id="hobby1" value="berenang">Berenang 
+                        <input type="checkbox"  name="hobby2" id ="hobby2" value="berlari">Berlari 
+                        <input type="checkbox"  name="hobby3" id="hobby3" value="lain">Lain-lain
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Pekerjaan">Pekerjaan</label></td>
+                    <td>
+                        <input type="checkbox"  name="job1" id="job1" value="pns">PNS 
+                        <input type="checkbox"  name="job2" id="job2" value="swasta">Swasta 
+                        <input type="checkbox"  name="job3" id="job3" value ="lain">Lain-lain
+                    </td>
+                </tr>
+                
+            </table>
+            
+            <input type="checkbox" id="confirm" name="confirm">
+            <label for="confirm">Check Jika Anda Akan Mengirimkan Data Ini</label><br><br>
+            
+            <button type="button" onclick="isiSemua()">Cek!</button>
+        </form>
+        <script src="tugas.js"></script>
+    </body>
+</html>
