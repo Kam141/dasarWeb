@@ -32,7 +32,16 @@
     }*/
     
     // soal 5.5
-    $pattern = '/go?d/';
+    /*$pattern = '/go?d/';
+    $text = 'god is good';
+    if (preg_match($pattern, $text, $matches)) {
+        echo "Cocokkan: " . $matches[0];
+    } else {
+        echo "Tidak ada yang cocok";
+    }*/
+
+    // soal 5.6
+    $pattern = '/go{n,m}d/';
     $text = 'god is good';
     if (preg_match($pattern, $text, $matches)) {
         echo "Cocokkan: " . $matches[0];
