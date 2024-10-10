@@ -9,7 +9,7 @@
             <label for="buah">Pilih Buah:</label>
             <select name="buah" id="buah">
                 <option value="apel">Apel</option>
-                <option value="pisang">Pisang"></option>
+                <option value="pisang">Pisang</option>
                 <option value="mangga">Mangga</option>
                 <option value="Jeruk">Jeruk</option>
             </select>
