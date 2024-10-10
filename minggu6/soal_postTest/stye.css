@@ -16,6 +16,7 @@ tr:nth-child(even) {
     /* padding: 50px; */
     border: solid 2px #e0e4cc;
     background:  #e0e4cc ;
+    text-align: center;
 }
 #kotak2{
     border: solid 2px #e0e4cc;
