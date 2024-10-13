@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password harus minimal 8 karakter.";
     }
 
-    if (empty($errors)) {
+    if (!empty($errors)) {
         foreach ($errors as $error) {
             echo $error . "<br>";
         }
