@@ -33,9 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'&& !isset($_POST['delete_order'])) {
         if (!empty($note)) {
             echo " Special requests: $note";
         }
-    } else {
-        echo "Please check again !";
-    }
+    } 
 }
 
 // Tampilkan daftar pesanan jika ada
