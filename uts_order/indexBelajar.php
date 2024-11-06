@@ -7,9 +7,12 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <?php
+        include 'connection.php';
+        ?>
         <div class="container">
             <h1>Order Your Coffee</h1>
-            <form id="orderForm" action="processBelajar.php" method="POST">
+            <form id="orderForm" method="POST">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -34,7 +37,7 @@
                 <input type="number" id="quantity" name="quantity" min="1" required>
 
                 <label for="note">Special Request:</label>
-                <textarea id="note" name="note" rows="4" placeholder="Any special requests?"></textarea>
+                <textarea id="note" name="note" rows="4" placeholder="Any special requests?" value=""></textarea>
 
                 <button type="submit">Submit Order</button>
             </form>
