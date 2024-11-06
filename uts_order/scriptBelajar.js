@@ -3,7 +3,7 @@ $(document).ready(function() {
         event.preventDefault(); 
         var formData = $(this).data('id_pesanan'); 
         $.ajax({ 
-            url: 'pocessBelajar.php',
+            url: 'processhapus.php',
             type: 'POST',
             data: {delete_order: formData},
             success: function(response) {

@@ -88,19 +88,6 @@ session_start();
 include 'connection.php'; // Pastikan untuk menyertakan file koneksi database
 
 
-//untuk menghapus pesanan
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_order'])) {
-    $id_pesanan = intval($_POST['delete_order']); // Pastikan ID adalah integer
-
-    // Query untuk menghapus pesanan
-    $query = "DELETE FROM pemesanan WHERE id_pesanan = $id_pesanan";
-    $stmt = $conn->prepare($query);
-    $stmt->bindParam('id_pesanan', $id_pesanan, PDO::PARAM_INT);
-    $stmt->execute();
-
-    echo "Pesanan dengan ID $id_pesanan telah dihapus.";
-}
-
 
 //Digunakan untuk menambahkan pesanan
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['delete_order'])) {
@@ -112,8 +99,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['delete_order'])) {
 
     if (!empty($name) && !empty($coffee) && !empty($size) && $quantity > 0) {
         // Simpan pesanan ke dalam database
-        $query = "INSERT INTO pemesanan VALUES ('$name', '$coffee', '$size', $quantity, '$note')";
-        $stmt = $conn->query($query);
+        $stmt = $conn->prepare("INSERT INTO pemesanan (nama, coffee, size, quantity, note) VALUES (:nama, :coffee, :size, :quantity, :note)");
+        $stmt->bindParam(':nama', $nama);
+        $stmt->bindParam(':coffee', $coffee);
+        $stmt->bindParam(':size', $size);
+        $stmt->bindParam(':quantity', $quantity);
+        $stmt->bindParam(':note', $note);
 
         echo "Terima Kasih, $name! Order mu untuk $quantity $size $coffee telah diterima.";
         if (!empty($note)) {
@@ -146,7 +137,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['delete_order'])) {
             <td>{$order['note']}</td>
             <td>Success</td>
             <td><form method='post'>
-                <button type='submit' id='delete_order' name='delete_order' value='{$order['id_pesanan']}' class='delete_order'>Delete</button>
+            
+                <button type='submit' id='delete_order' name='delete_order' value='{$order['id_pesanan']}' class='id_pesanan'>Delete</button>
                 </form>
             </td>
         </tr>";
